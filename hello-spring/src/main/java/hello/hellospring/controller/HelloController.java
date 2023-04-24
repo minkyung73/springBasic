@@ -11,7 +11,7 @@ public class HelloController {
     @GetMapping("hello")     // '주소/hello'로 들어오면 이 코드랑 mapping 해줌
     public String hello(Model model) {
         model.addAttribute("data", "spring!!");
-        return "hello"; // return 값인 hello.html을 찾음
+        return "hello"; // return 값으로 hello.html을 찾음
     }
 
     // ex) http://localhost:8080/hello-mvc?name=stst
