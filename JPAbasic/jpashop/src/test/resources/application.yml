@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop   # 마지막에 drop 쿼리를 날려줌 (깨끗해진다?)
     properties:
       hibernate:
 #        show_sql: true
