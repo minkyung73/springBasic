@@ -24,12 +24,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Transactional
 public class OrderServiceTest {
 
+    @Autowired EntityManager em;
+    @Autowired OrderService orderService;
+    @Autowired OrderRepository orderRepository;
+
     @Test
     public void 상품주문() throws Exception {
-
-        @Autowired EntityManager em;
-        @Autowired OrderService orderService;
-        @Autowired OrderRepository orderRepository;
 
         // given
         Member member = new Member();
