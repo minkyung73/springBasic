@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional(readOnly = true) // readOnly=true 이면 조회 면에서 성능을 좋게 해줌 (읽기에는 가급적 이거 넣어주기)
 @RequiredArgsConstructor
 public class MemberService {
 
@@ -21,10 +21,10 @@ public class MemberService {
     /**
      * 회원 가입
      * */
-    @Transactional  // 위에 readOnly = true가 있어도 얘가 먼저 default인 false로 적용?됨
+    @Transactional  // 위에 readOnly = true가 있어도 해당 메소드에는 얘가 먼저 default인 false로 적용?됨
     public Long join(Member member) {
 
-        validateDuplicateMember(member);
+        validateDuplicateMember(member);    // 중복회원 검증
         memberRepository.save(member);
         return member.getId();
     }
@@ -37,12 +37,14 @@ public class MemberService {
         }
     }
 
-    // 회원 전체 조회
-    public List<Member> findMembers() {
+    /**
+     * 회원 조회
+     */
+    public List<Member> findMembers() {     // 전체 조회
         return memberRepository.findAll();
     }
 
-    public Member findOne(Long memberId) {
+    public Member findOne(Long memberId) {  // 단건 조회
         return memberRepository.findOne(memberId);
     }
 }
