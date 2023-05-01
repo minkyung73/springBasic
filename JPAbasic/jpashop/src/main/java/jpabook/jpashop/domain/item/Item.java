@@ -9,9 +9,10 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "dtype")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)   // 이거랑
+@DiscriminatorColumn(name = "dtype")    // 이거 다시 찾아보기 (하나의 필드 같긴 함)
 @Getter @Setter
 public class Item {
     @Id

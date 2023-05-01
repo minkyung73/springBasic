@@ -20,20 +20,20 @@ public class Order {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id") // FK
     private Member member;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "delivery_id")
+    @JoinColumn(name = "delivery_id")   // FK
     private Delivery delivery;
 
-    private LocalDateTime orderDate;    // 주문 시간
+    private LocalDateTime orderDate;    // 주문 시간 (패키지가 있음)
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus status; // 주문상태 [ORDER, CANCEL]
+    private OrderStatus status; // 주문상태 [ORDER, CANCEL] -> status는 왜 enum으로 하는지?
 
     // ==연관관계 메서드 == //
     // 양방향일 때 쓰면 됨

@@ -14,11 +14,11 @@ public class Delivery {
     private Long id;
 
     @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
-    private Order order;
+    private Order order;    // Order에 있는 devlivery 변수로 FK를 보낸다
 
     @Embedded
     private Address address;
 
     @Enumerated(EnumType.STRING)
-    private DeliveryStatus status;  // READY, COMP
+    private DeliveryStatus status;  // READY, COMP -> 여기도 status 잘 모르겠다..
 }
