@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 
-@Embeddable
+@Embeddable // 내장 타입임을 명시
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
