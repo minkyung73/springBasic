@@ -1,5 +1,7 @@
-package jpabook.jpashop.domain;
+package com.JPA1.japshopReact.Delivery.model;
 
+import com.JPA1.japshopReact.Address.model.Address;
+import com.JPA1.japshopReact.Order.model.Order;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,8 +10,8 @@ import javax.persistence.*;
 @Entity
 @Getter @Setter
 public class Delivery {
-
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "delivery_id")
     private Long id;
 
