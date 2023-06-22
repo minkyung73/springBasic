@@ -1,25 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import ProjectData from "../data/project/ProjectData.json";
 import SectionTitle from '../elements/section-title/SectionTitle';
 import { Container, Row, Col } from 'react-bootstrap';
-
-const filters = [
-	{
-		id: 1,
-		label: "All Works",
-    },
-    {
-		id: 2,
-		label: "Branding",
-    },
-    {
-		id: 3,
-		label: "Mobile",
-    }
-];
-
-const AllData = ProjectData;
 
 const Memberdata = [
     { id: 1, name: 'user 1', city: 'city1', address: 'addr1', post: 1111 },
@@ -27,22 +8,11 @@ const Memberdata = [
     { id: 3, name: 'user 3', city: 'city3', address: 'addr3', post: 3333 },
 ];
 
-const MemberList = ({parentClass, colSize, itemShow, columnGap}) => {
-
-    const [getAllItems] = useState(AllData);
-	const [visiableProject] = useState(itemShow ? itemShow : 6);
-    const [activeFilter, setActiveFilter] = useState("");
-	const [visibleItems, setVisibleItems] = useState([]);
-	
-
-	useEffect(() => {
-        setActiveFilter(filters[0].label);
-		setVisibleItems(getAllItems.filter((item) => item.id <= visiableProject));
-    }, []);
+const MemberList = () => {
 
     return (
         <main className="main-wrapper">
-			<div className={`section section-padding-2 ${parentClass ? parentClass : ""}`}>
+			<div className={`section section-padding-2`}>
                 <div className="container">
                     <SectionTitle 
                     subtitle="HOME"

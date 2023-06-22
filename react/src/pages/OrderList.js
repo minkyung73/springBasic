@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import ProjectData from "../data/project/ProjectData.json";
+import ProjectData from "../data/ProjectData.json";
 import SectionTitle from '../elements/section-title/SectionTitle';
 import { Container, Row, Col } from 'react-bootstrap';
 
