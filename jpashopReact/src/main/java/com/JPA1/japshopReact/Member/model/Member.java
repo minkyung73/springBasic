@@ -2,6 +2,7 @@ package com.JPA1.japshopReact.Member.model;
 
 import com.JPA1.japshopReact.Address.model.Address;
 import com.JPA1.japshopReact.Order.model.Order;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,4 +27,5 @@ public class Member {
     // Order 테이블의 member(FK)와 매핑
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>(); // "다"이므로 List
+
 }
